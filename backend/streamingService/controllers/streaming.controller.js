@@ -8,7 +8,7 @@ const awsRegion = process.env.AWS_REGION;
 const awsKey = process.env.AWS_KEY_ID;
 const awsSecret = process.env.AWS_SECRET_KEY;
 
-let credentials = new awsSdk.SharedIniFileCredentials({profile: 'devops-batch7'})
+let credentials = new awsSdk.SharedIniFileCredentials({profile: 'default'})
 // awsSdk.config.update({
 //   accessKeyId: awsKey,
 //   secretAccessKey: awsSecret,
