@@ -8,11 +8,14 @@ const awsRegion = process.env.AWS_REGION;
 const awsKey = process.env.AWS_KEY_ID;
 const awsSecret = process.env.AWS_SECRET_KEY;
 
-awsSdk.config.update({
-  accessKeyId: awsKey,
-  secretAccessKey: awsSecret,
-  region: awsRegion
-});
+let credentials = new awsSdk.SharedIniFileCredentials({profile: 'devops-batch7'})
+// awsSdk.config.update({
+//   accessKeyId: awsKey,
+//   secretAccessKey: awsSecret,
+//   region: awsRegion
+// });
+
+awsSdk.config.credentials = credentials
 
 const s3 = new awsSdk.S3();
 const videoKey = "theNights.mp4"; // Adjust the path to your video in the S3 bucket

@@ -17,7 +17,7 @@ const streamingRoutes = require('./routes/streaming.route')
 app.use('/health', healthRoutes)
 app.use('/streaming', streamingRoutes)
 
-
-app.listen(process.env.PORT, () => {
+const port = process.env.PORT || 3002; 
+app.listen(port, () => {
     console.log(`NPS Calculation service running at port ${process.env.PORT}`)
 })
